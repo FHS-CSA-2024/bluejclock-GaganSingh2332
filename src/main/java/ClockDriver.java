@@ -1,3 +1,5 @@
+package src.main.java;
+
 
 public class ClockDriver
 {
@@ -14,7 +16,18 @@ public class ClockDriver
         //  * Tick test for 01:59 to 02:00
         //  * Tick test for 09:59 to 10:00
         //  * Tick test for 23:59 to 00:00
+        ClockDisplay test11 = new ClockDisplay();
+        String test11Out = test11.getTime();
+        System.out.println("No Constructor Test Results = " + test11Out);
         
+        ClockDisplay test22 = new ClockDisplay (3, 45);
+        String test22Out = test22.getTime();
+        System.out.println("argument constructor test results = " + test22Out);
+        
+        ClockDisplay tickTest11 = new ClockDisplay(3, 32);
+        System.out.println("Before First Tick Test = " + tickTest11.getTime());
+        tickTest11.timeTick();
+        System.out.println("After First Tick Test = " + tickTest11.getTime());
         
         //Implement tests for your ClockDisplaySeconds
         //  * Test that you can do the basics
@@ -27,6 +40,27 @@ public class ClockDriver
         //  * Tick test for 01:00:59 to 01:01:00
         //  * Tick test for 01:59:59 to 02:00:00
         //  * Tick test for 23:59:59 to 00:00:00
+        ClockDisplaySeconds tickTest22 = new ClockDisplaySeconds(3, 32, 59);
+        System.out.println("Before Second Tick Test = " + tickTest22.getTime());
+        tickTest22.TimeTickSeconds();
+        System.out.println("After Second Tick Test = " + tickTest22.getTime());
+        
+        ClockDisplaySeconds tickTest33 = new ClockDisplaySeconds(1, 00, 59);
+        System.out.println("Before Third Tick Test = " + tickTest33.getTime());
+        tickTest33.TimeTickSeconds();
+        System.out.println("After Third Tick Test = " + tickTest33.getTime());
+        
+        
+        ClockDisplaySeconds tickTest44 = new ClockDisplaySeconds(1, 3, 59);
+        System.out.println("Before Fourth Tick Test = " + tickTest44.getTime());
+        tickTest44.TimeTickSeconds();
+        System.out.println("After Fourth Tick Test = " + tickTest44.getTime());
+        
+        ClockDisplaySeconds tickTest55 = new ClockDisplaySeconds(23, 59, 59);
+        System.out.println("Before Fifth Tick Test = " + tickTest55.getTime());
+        tickTest55.TimeTickSeconds();
+        System.out.println("After Fifth Tick Test = " + tickTest55.getTime());
+        
         
         /*CHALLENGE*/
         //Implement tests for your ClockDisplay12Hour
